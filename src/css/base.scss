@@ -1,0 +1,32 @@
+@import "./variables.scss";
+
+body {
+  margin: 0;
+  font-family: "PingFang SC", "Microsoft Yahei", "Noto Sans Han", "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/**
+* https://www.digitalocean.com/community/tutorials/css-scrollbars
+*/
+/* Works on Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-bg);
+}
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 10px;
+}
+*::-webkit-scrollbar-track {
+  background: var(--scrollbar-bg);
+}
+*::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: var(--scrollbar-thumb);
+  transition: background-color var(--time-fast);
+  &:hover {
+    background-color: var(--scrollbar-thumb-hover);
+  }
+}
