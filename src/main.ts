@@ -3,8 +3,7 @@ import {
 } from 'vue';
 import ElementPlus from 'element-plus';
 
-import './css/base.scss';
-import 'element-plus/dist/index.css';
+import './css/main.scss';
 
 import App from './app.vue';
 

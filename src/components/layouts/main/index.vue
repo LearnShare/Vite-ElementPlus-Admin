@@ -1,7 +1,9 @@
 <template>
   <div class="layout-main">
     <el-container>
-      <el-header>Header</el-header>
+      <el-header>
+        <page-header />
+      </el-header>
       <el-container>
         <el-aside width="240px">
           <nav-menu />
@@ -17,6 +19,7 @@
 <script
     setup
     lang="ts">
+import PageHeader from './page-header/index.vue';
 import NavMenu from './nav-menu/index.vue';
 </script>
 
