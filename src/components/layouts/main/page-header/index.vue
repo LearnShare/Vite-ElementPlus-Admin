@@ -20,14 +20,29 @@
         <el-menu-item
             index="guide">Guide</el-menu-item>
         <el-sub-menu
-            index="docs">
-          <template #title>Docs</template>
+            index="theme">
+          <template #title>Theme</template>
           <el-menu-item
-              index="docs-router">Router</el-menu-item>
+              index="theme-auto">
+            <el-icon>
+              <IconMagicStick />
+            </el-icon>
+            <template #title>Auto</template>
+          </el-menu-item>
           <el-menu-item
-              index="docs-layout">Layout</el-menu-item>
+              index="theme-light">
+            <el-icon>
+              <IconSunny />
+            </el-icon>
+            <template #title>Light</template>
+          </el-menu-item>
           <el-menu-item
-              index="docs-template">Template</el-menu-item>
+              index="theme-dark">
+            <el-icon>
+              <IconMoonNight />
+            </el-icon>
+            <template #title>Dark</template>
+          </el-menu-item>
         </el-sub-menu>
       </el-menu>
       <el-switch
@@ -53,6 +68,7 @@ import {
 } from 'vue';
 import {
   Search as IconSearch,
+  MagicStick as IconMagicStick,
   Sunny as IconSunny,
   MoonNight as IconMoonNight,
 } from '@element-plus/icons-vue';

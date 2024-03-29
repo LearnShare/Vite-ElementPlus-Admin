@@ -67,5 +67,6 @@ module.exports = {
     'guard-for-in': 'off',
     'import/no-extraneous-dependencies': 'off',
     'vue/multi-word-component-names': 'off',
+    'import/prefer-default-export': 'off',
   },
 };

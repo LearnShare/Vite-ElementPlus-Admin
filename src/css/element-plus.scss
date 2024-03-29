@@ -1,6 +1,7 @@
 // element-plus overrides
 
-// el-menu
-.el-menu {
+// prevent text selection
+.el-menu,
+.el-switch {
   user-select: none;
 }
