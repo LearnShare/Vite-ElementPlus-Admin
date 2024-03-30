@@ -1,6 +1,8 @@
 <template>
   <el-menu
-      router>
+      router
+      :collapse="collapse"
+      :collapse-transition="false">
     <template
         v-for="item in routes"
         :key="item.path">
@@ -45,4 +47,8 @@
     setup
     lang="ts">
 import routes from '@/router/routes';
+
+defineProps<{
+  collapse?: boolean,
+}>();
 </script>

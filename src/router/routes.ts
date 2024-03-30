@@ -3,6 +3,7 @@ import {
 } from 'vue-router';
 import {
   HomeFilled as IconHomeFilled,
+  Brush as IconBrush,
   Collection as IconCollection,
   Monitor as IconMonitor,
   Film as IconFilm,
@@ -21,6 +22,16 @@ const routes: RouteRecord[] = [
       // menu icon
       icon: IconHomeFilled,
       // use a layout
+      layout: 'LayoutMain',
+    },
+  },
+  {
+    path: '/theme',
+    name: 'theme',
+    component: () => import('@/pages/theme/index.vue'),
+    meta: {
+      title: 'Theme',
+      icon: IconBrush,
       layout: 'LayoutMain',
     },
   },

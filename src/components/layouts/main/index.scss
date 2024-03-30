@@ -11,6 +11,21 @@
 
   .el-aside {
     border-right: solid 1px var(--el-menu-border-color);
+
+    .collapse-btn {
+      opacity: 0;
+      position: fixed;
+      left: 48px;
+      top: 68px;
+      z-index: 2;
+      &:hover {
+        opacity: 1;
+      }
+      &.expand {
+        // TODO use variables
+        left: 224px;
+      }
+    }
   }
 
   .el-menu {

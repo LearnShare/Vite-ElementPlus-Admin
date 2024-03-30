@@ -10,7 +10,6 @@
 
 + Themes
   + Light|Dark|Auto
-  + Customization
 + Layouts
   + Adaptive
   + Responsive
