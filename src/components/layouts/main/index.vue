@@ -28,8 +28,8 @@
     setup
     lang="ts">
 import {
-  ref,
-} from 'vue';
+  useStorage,
+} from '@vueuse/core';
 import {
   Expand as IconExpand,
   Fold as IconFold,
@@ -38,8 +38,7 @@ import {
 import PageHeader from './page-header/index.vue';
 import NavMenu from './nav-menu/index.vue';
 
-// TODO store data
-const collapse = ref(false);
+const collapse = useStorage('vepa_nav_collapse', false);
 
 function toggleCollapse() {
   collapse.value = !collapse.value;

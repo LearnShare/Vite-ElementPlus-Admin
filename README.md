@@ -5,6 +5,7 @@
 + [Vite](https://vitejs.dev/)
 + [Vue 3](https://vuejs.org/)
 + [Element Plus](https://element-plus.org/)
++ [VueUse](https://vueuse.org/)
 
 ## Feature
 

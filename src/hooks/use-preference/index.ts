@@ -1,25 +1,13 @@
 import {
-  ref,
-} from 'vue';
+  useStorage,
+} from '@vueuse/core';
 
 export function usePreference() {
-  // TODO store data
-  const preference = ref({
+  const preference = useStorage('vepa_preference', {
     theme: 'auto',
   });
 
-  /* function setPreference(
-    key: string,
-    value: string | number | boolean,
-  ) {
-    preference.value = {
-      ...preference.value,
-      [key]: value,
-    };
-  } */
-
   return {
     preference,
-    // setPreference,
   };
 }
