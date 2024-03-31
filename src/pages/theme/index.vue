@@ -55,7 +55,7 @@ function updateTheme(value) {
     : value;
 }
 
-// TODO set theme when app mounted
+// FEATURE set theme when App mounted
 onMounted(() => {
   updateTheme(preference.value.theme);
 });

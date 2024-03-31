@@ -4,7 +4,7 @@
       <el-header>
         <page-header />
       </el-header>
-      <el-container>
+      <el-container class="main-container">
         <el-aside
             :width="collapse ? 'auto' : '240px'">
           <nav-menu

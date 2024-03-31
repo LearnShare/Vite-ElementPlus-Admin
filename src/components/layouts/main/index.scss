@@ -3,10 +3,21 @@
 
   .el-header {
     border-bottom: solid 1px var(--el-menu-border-color);
+    width: 100%;
   }
 
-  .el-container {
+  & > .el-container {
     height: 100%;
+    align-items: center;
+  }
+
+  .main-container {
+    width: 100%;
+    /**
+    * FEATURE set content max-width
+    * TODO use variables
+    */
+    max-width: 1360px;
   }
 
   .el-aside {
@@ -22,7 +33,9 @@
         opacity: 1;
       }
       &.expand {
-        // TODO use variables
+        /**
+        * TODO use variables
+        */
         left: 224px;
       }
     }
