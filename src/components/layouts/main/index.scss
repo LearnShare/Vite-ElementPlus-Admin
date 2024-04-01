@@ -1,5 +1,6 @@
 .layout-main {
   height: 100vh;
+  overflow: hidden;
 
   .el-header {
     border-bottom: solid 1px var(--el-menu-border-color);
@@ -18,6 +19,8 @@
     * TODO use variables
     */
     max-width: 1360px;
+    height: calc(100vh - 60px);
+    overflow: hidden;
   }
 
   .el-aside {

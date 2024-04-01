@@ -1,0 +1,27 @@
+.page-dashboard {
+  section:not(:first-of-type) {
+    margin-top: 40px;
+  }
+
+  h2 {
+    margin: 0;
+    margin-bottom: 1em;
+    font-size: 1.3em;
+    font-weight: normal;
+    color: var(--el-text-color-regular);
+  }
+
+  .styled {
+    .el-statistic {
+      border-radius: 4px;
+      padding: 8px;
+      background-color: var(--el-fill-color-lighter);
+    }
+
+    :deep(.el-statistic__head) {
+      text-align: right;
+      font-size: 1.2em;
+      color: var(--el-text-color-placeholder);
+    }
+  }
+}
