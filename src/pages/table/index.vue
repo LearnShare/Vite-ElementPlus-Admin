@@ -1,6 +1,9 @@
 <template>
   <div class="page-table">
     <div class="toolbar">
+      <el-button
+          type="primary"
+          @click="createItem">Create</el-button>
       <el-input
           v-model="filter.search"
           placeholder="Search products" />
@@ -45,6 +48,16 @@
             prop="price"
             align="right"
             width="120" />
+        <el-table-column
+            label="Actions"
+            width="100">
+          <template #default="scope">
+            <el-button
+                text
+                type="primary"
+                @click="updateItem(scope.row)">Update</el-button>
+          </template>
+        </el-table-column>
       </el-table>
     </div>
     <div class="footer">
@@ -57,6 +70,10 @@
           :current-page="filter.page"
           @current-change="pageUpdated" />
     </div>
+    <edit-dialog
+        :show="editDialogVisible"
+        :data="editDialogData"
+        @close="hideEditDialog" />
   </div>
 </template>
 
@@ -66,6 +83,8 @@
 import {
   ref,
 } from 'vue';
+
+import EditDialog from './dialog/edit.vue';
 
 const filter = ref({
   page: 1,
@@ -173,6 +192,27 @@ const data = [
 
 function pageUpdated(page) {
   filter.value.page = page;
+}
+
+// edit dialog
+const editDialogVisible = ref(false);
+const editDialogData = ref(null);
+
+function createItem() {
+  editDialogData.value = null;
+
+  editDialogVisible.value = true;
+}
+function updateItem(item) {
+  editDialogData.value = {
+    ...item,
+  };
+
+  editDialogVisible.value = true;
+}
+function hideEditDialog() {
+  editDialogVisible.value = false;
+  editDialogData.value = null;
 }
 </script>
 
