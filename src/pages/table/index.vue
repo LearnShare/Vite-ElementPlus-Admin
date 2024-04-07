@@ -4,6 +4,9 @@
       <el-button
           type="primary"
           @click="createItem">Create</el-button>
+      <el-button
+          type="success"
+          @click="addItem">Add</el-button>
       <el-input
           v-model="filter.search"
           placeholder="Search products" />
@@ -50,12 +53,16 @@
             width="120" />
         <el-table-column
             label="Actions"
-            width="100">
+            width="120">
           <template #default="scope">
             <el-button
-                text
+                link
                 type="primary"
                 @click="updateItem(scope.row)">Update</el-button>
+            <el-button
+                link
+                type="primary"
+                @click="editItem(scope.row)">Edit</el-button>
           </template>
         </el-table-column>
       </el-table>
@@ -74,6 +81,10 @@
         :show="editDialogVisible"
         :data="editDialogData"
         @close="hideEditDialog" />
+    <edit-drawer
+        :show="editDrawerVisible"
+        :data="editDrawerData"
+        @close="hideEditDrawer" />
   </div>
 </template>
 
@@ -85,6 +96,7 @@ import {
 } from 'vue';
 
 import EditDialog from './dialog/edit.vue';
+import EditDrawer from './drawer/edit.vue';
 
 const filter = ref({
   page: 1,
@@ -194,7 +206,7 @@ function pageUpdated(page) {
   filter.value.page = page;
 }
 
-// edit dialog
+// #region edit dialog
 const editDialogVisible = ref(false);
 const editDialogData = ref(null);
 
@@ -203,6 +215,7 @@ function createItem() {
 
   editDialogVisible.value = true;
 }
+
 function updateItem(item) {
   editDialogData.value = {
     ...item,
@@ -210,10 +223,36 @@ function updateItem(item) {
 
   editDialogVisible.value = true;
 }
+
 function hideEditDialog() {
   editDialogVisible.value = false;
   editDialogData.value = null;
 }
+// #endregion
+
+// #region edit drawer
+const editDrawerVisible = ref(false);
+const editDrawerData = ref(null);
+
+function addItem() {
+  editDrawerData.value = null;
+
+  editDrawerVisible.value = true;
+}
+
+function editItem(item) {
+  editDrawerData.value = {
+    ...item,
+  };
+
+  editDrawerVisible.value = true;
+}
+
+function hideEditDrawer() {
+  editDrawerVisible.value = false;
+  editDrawerData.value = null;
+}
+// #endregion
 </script>
 
 <style
