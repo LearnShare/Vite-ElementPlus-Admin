@@ -1,0 +1,7 @@
+.actions {
+  margin-bottom: 0;
+
+  :deep(.el-form-item__content) {
+    justify-content: end;
+  }
+}

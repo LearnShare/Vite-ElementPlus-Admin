@@ -7,19 +7,9 @@
       <el-button
           type="success"
           @click="addItem">Add</el-button>
-      <el-input
-          v-model="filter.search"
-          placeholder="Search products" />
-      <el-select
-          v-model="filter.category"
-          multiple
-          collapse-tags>
-        <el-option
-            v-for="category in categories"
-            :key="category.id"
-            :label="category.name"
-            :value="category.id" />
-      </el-select>
+      <data-filter
+          :categories="categories"
+          @change="filterChanged" />
     </div>
     <div class="table">
       <el-table
@@ -73,8 +63,8 @@
           layout="prev, pager, next"
           :pager-count="5"
           :total="total"
-          :page-size="filter.size"
-          :current-page="filter.page"
+          :page-size="param.size"
+          :current-page="param.page"
           @current-change="pageUpdated" />
     </div>
     <edit-dialog
@@ -97,12 +87,16 @@ import {
 
 import EditDialog from './dialog/edit.vue';
 import EditDrawer from './drawer/edit.vue';
+import DataFilter from './filter/index.vue';
 
 const filter = ref({
-  page: 1,
-  size: 10,
   search: '',
   categories: [],
+});
+
+const param = ref({
+  page: 1,
+  size: 10,
 });
 
 const total = 100;
@@ -205,6 +199,15 @@ const data = [
 function pageUpdated(page) {
   filter.value.page = page;
 }
+
+function filterChanged(filterData) {
+  filter.value = {
+    ...filter.value,
+    ...filterData,
+  };
+}
+
+// TODO get data with params & filters
 
 // #region edit dialog
 const editDialogVisible = ref(false);
