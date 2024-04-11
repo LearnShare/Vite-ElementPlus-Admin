@@ -1,6 +1,7 @@
 <template>
   <el-menu
       router
+      :default-active="$route.path"
       :collapse="collapse"
       :collapse-transition="false">
     <template

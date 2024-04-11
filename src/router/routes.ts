@@ -7,7 +7,7 @@ import {
   Collection as IconCollection,
   Monitor as IconMonitor,
   Film as IconFilm,
-  DataLine as IconDataLine,
+  Grid as IconGrid,
 } from '@element-plus/icons-vue';
 
 const routes: RouteRecord[] = [
@@ -65,12 +65,12 @@ const routes: RouteRecord[] = [
         },
       },
       {
-        path: 'chart',
-        name: 'chart',
-        component: () => import('@/pages/chart/index.vue'),
+        path: 'grid',
+        name: 'grid',
+        component: () => import('@/pages/grid/index.vue'),
         meta: {
-          title: 'Chart',
-          icon: IconDataLine,
+          title: 'Grid',
+          icon: IconGrid,
           layout: 'LayoutMain',
         },
       },
