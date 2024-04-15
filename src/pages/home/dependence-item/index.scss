@@ -1,0 +1,39 @@
+.dependence-item {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  text-decoration: none;
+  &:hover {
+    .name {
+      text-decoration: underline;
+    }
+  }
+
+  .logo {
+    width: 162px;
+    text-align: right;
+
+    img {
+      height: 40px;
+    }
+  }
+
+  .info {
+    flex: 1;
+  }
+
+  .name {
+    margin: 0;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 1.5;
+    color: var(--el-text-color-primary);
+  }
+
+  .version {
+    margin-top: 4px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--el-text-color-placeholder);
+  }
+}
