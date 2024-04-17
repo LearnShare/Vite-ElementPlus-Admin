@@ -19,10 +19,21 @@ const routes: RouteRecord[] = [
     meta: {
       // page title
       title: 'Home',
-      // menu icon
-      icon: IconHomeFilled,
+      // nav menu
+      menu: {
+        icon: IconHomeFilled,
+      },
       // use a layout
       layout: 'LayoutMain',
+    },
+  },
+  {
+    path: '/signin',
+    name: 'signin',
+    component: () => import('@/pages/sign-in/index.vue'),
+    meta: {
+      title: 'Sign in',
+      layout: 'LayoutAuth',
     },
   },
   {
@@ -31,7 +42,9 @@ const routes: RouteRecord[] = [
     component: () => import('@/pages/theme/index.vue'),
     meta: {
       title: 'Theme',
-      icon: IconBrush,
+      menu: {
+        icon: IconBrush,
+      },
       layout: 'LayoutMain',
     },
   },
@@ -40,7 +53,9 @@ const routes: RouteRecord[] = [
     component: () => import('@/components/layouts/slot.vue'),
     meta: {
       title: 'Pages',
-      icon: IconCollection,
+      menu: {
+        icon: IconCollection,
+      },
       layout: 'LayoutMain',
     },
     children: [
@@ -50,7 +65,9 @@ const routes: RouteRecord[] = [
         component: () => import('@/pages/dashboard/index.vue'),
         meta: {
           title: 'Dashboard',
-          icon: IconMonitor,
+          menu: {
+            icon: IconMonitor,
+          },
           layout: 'LayoutMain',
         },
       },
@@ -60,7 +77,9 @@ const routes: RouteRecord[] = [
         component: () => import('@/pages/table/index.vue'),
         meta: {
           title: 'Table',
-          icon: IconFilm,
+          menu: {
+            icon: IconFilm,
+          },
           layout: 'LayoutMain',
         },
       },
@@ -70,7 +89,9 @@ const routes: RouteRecord[] = [
         component: () => import('@/pages/grid/index.vue'),
         meta: {
           title: 'Grid',
-          icon: IconGrid,
+          menu: {
+            icon: IconGrid,
+          },
           layout: 'LayoutMain',
         },
       },

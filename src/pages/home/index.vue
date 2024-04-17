@@ -61,7 +61,7 @@
           <ul class="links">
             <li>
               <router-link
-                  to="/pages/signin">Sign in</router-link>
+                  to="/signin">Sign in</router-link>
             </li>
             <li>
               <router-link
